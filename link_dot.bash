@@ -6,7 +6,7 @@ link_dot_to_home() {
 
   if [ ! -L $home_path ]
   then
-    [ -f $home_path || -d $home_path ] && mv $home_path $home_path.predot
+    ([ -f $home_path ] || [ -d $home_path ]) && mv $home_path $home_path.predot
     ln -s $dot_path $home_path
   fi
 }
