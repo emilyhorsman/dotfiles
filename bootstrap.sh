@@ -6,6 +6,12 @@ source $HOME/.dotfiles/link_dot.bash
 link_dot_to_home "zshrc" ".zshrc"
 link_dot_to_home "vimrc" ".vimrc"
 
+# Download vim plugged
+if [[ ! -f $HOME/.vim/autoload/plug.vim ]]
+then
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
 # Load forked copy of Tomorrow Night.
 [[ ! -d $HOME/.dotfiles/tomorrow ]] && git clone git@github.com:emilyhorsman/tomorrow-theme.git $HOME/.dotfiles/tomorrow
 
