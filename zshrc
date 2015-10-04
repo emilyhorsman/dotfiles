@@ -17,6 +17,7 @@ bindkey '^f' vi-forward-blank-word
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 [[ -s $HOME/.gvm/scripts/gvm ]] && . $HOME/.gvm/scripts/gvm
+[[ -s $HOME/.dotfiles/link_dot.bash ]] && . $HOME/.dotfiles/link_dot.bash
 
 [[ -s $HOME/.rvm/bin ]] && export PATH="$PATH:$HOME/.rvm/bin"
 
