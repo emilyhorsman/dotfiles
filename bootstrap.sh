@@ -5,6 +5,7 @@ source $HOME/.dotfiles/link_dot.bash
 
 link_dot_to_home "zshrc" ".zshrc"
 link_dot_to_home "vimrc" ".vimrc"
+link_dot_to_home "gitconfig" ".gitconfig"
 
 # Download vim plugged
 if [[ ! -f $HOME/.vim/autoload/plug.vim ]]
