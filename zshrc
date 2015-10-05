@@ -36,6 +36,7 @@ zstyle ':vcs_info:*' formats "%F{175}%b%f (%s)"
 if [[ $(hostname -s) =~ "vagrant"  && -d /vagrant/www ]]
 then
   cd /vagrant/www
+  export GIT_OBJECT_THRESHOLD=20000
 fi
 
 git_object_count() {
