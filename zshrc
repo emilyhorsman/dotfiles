@@ -18,9 +18,12 @@ bindkey '^f' vi-forward-blank-word
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 [[ -s $HOME/.gvm/scripts/gvm ]] && . $HOME/.gvm/scripts/gvm
 [[ -s $HOME/.rvm/scripts/rvm ]] && . $HOME/.rvm/scripts/rvm
+[[ -s /usr/local/rvm/scripts/rvm ]] && . /usr/local/rvm/scripts/rvm
 [[ -s $HOME/.dotfiles/link_dot.bash ]] && . $HOME/.dotfiles/link_dot.bash
 
 [[ -s $HOME/.rvm/bin ]] && export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s /usr/local/rvm/bin ]] && export PATH="$PATH:/usr/local/rvm/bin"
+[[ -s $HOME/.composer/vendor/bin ]] && export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # http://superuser.com/questions/49092/how-to-format-the-path-in-a-zsh-prompt
 setopt PROMPT_SUBST
