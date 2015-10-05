@@ -33,6 +33,11 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats "%F{175}%b%f (%s)"
 
+if [[ $(hostname -s) =~ "vagrant"  && -d /vagrant/www ]]
+then
+  cd /vagrant/www
+fi
+
 git_object_count() {
   git count-objects -v | cut -d: -f 2 | paste -sd+ - | bc
 }
