@@ -36,6 +36,7 @@ zstyle ':vcs_info:*' formats "%F{175}%b%f (%s)"
 if [[ $(hostname -s) =~ "vagrant"  && -d /vagrant/www ]]
 then
   cd /vagrant/www
+  export DISABLE_VCS_PROMPT=yes
   export GIT_OBJECT_THRESHOLD=20000
 fi
 
@@ -48,6 +49,11 @@ count_matches() {
 }
 
 vcs_prompt() {
+  if [[ $DISABLE_VCS_PROMPT == "yes" ]]
+  then
+    return
+  fi
+
   git_prompt="${vcs_info_msg_0_}"
 
   # If we're in a git repo with an object count less than our threshold
