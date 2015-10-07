@@ -38,6 +38,7 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats "%F{175}%b%f (%s)"
 
 export TERM=screen-256color
+export KEYTIMEOUT=1 # 10 ms
 
 if [[ $(hostname -s) =~ "vagrant"  && -d /vagrant/www ]]
 then
