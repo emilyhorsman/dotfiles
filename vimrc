@@ -17,7 +17,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'kien/ctrlp.vim'
 Plug 'https://github.com/evidens/vim-twig.git'
 Plug 'https://github.com/vim-scripts/SWIG-syntax.git'
-Plug 'https://github.com/gosukiwi/vim-atom-dark.git'
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
