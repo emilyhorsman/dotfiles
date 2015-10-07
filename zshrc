@@ -37,7 +37,7 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats "%F{175}%b%f (%s)"
 
-export TERM=xterm-256color
+export TERM=screen-256color
 
 if [[ $(hostname -s) =~ "vagrant"  && -d /vagrant/www ]]
 then
