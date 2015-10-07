@@ -8,8 +8,8 @@
     ui = auto
 [alias]
     a  = add
-    c  = commit
-    cm = commit -m
+    c  = commit -m
+    cm = commit
     l  = log --pretty=format:\"%h - %ar | %s%d [%an]\" --graph
     b  = branch
     s  = status
