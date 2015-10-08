@@ -73,8 +73,12 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 autocmd BufRead,BufNewFile *.mustache set filetype=html
 
-" Change cursor shape in tmux vim
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 set timeoutlen=1000 ttimeoutlen=0
+" Change cursor shape in tmux vim
+" 7.4.687 required for t_SR
+" https://github.com/vim/vim/releases/tag/v7.4.687
+if has("patch-7.4-687")
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+endif
