@@ -25,6 +25,8 @@ bindkey '^f' vi-forward-blank-word
 [[ -s /usr/local/rvm/bin ]] && export PATH="$PATH:/usr/local/rvm/bin"
 [[ -s $HOME/.composer/vendor/bin ]] && export PATH="$HOME/.composer/vendor/bin:$PATH"
 
+[[ $(which rbenv > /dev/null) ]] && eval "$(rbenv init -)"
+
 # http://superuser.com/questions/49092/how-to-format-the-path-in-a-zsh-prompt
 setopt PROMPT_SUBST
 
