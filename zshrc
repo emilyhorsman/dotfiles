@@ -15,7 +15,16 @@ fi
 # Ctrl+F to fill in next word from autosuggestion
 bindkey '^f' vi-forward-blank-word
 
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
+# Load brew install of nvm if it exists, then try home directory
+export NVM_DIR=$HOME/.nvm
+if [[ -s $(brew --prefix nvm)/nvm.sh ]]
+then
+  source $(brew --prefix nvm)/nvm.sh
+elif [[ -s $NVM_DIR/nvm.sh ]]
+then
+  source $NVM_DIR/nvm.sh
+fi
+
 [[ -s $HOME/.gvm/scripts/gvm ]] && . $HOME/.gvm/scripts/gvm
 [[ -s $HOME/.rvm/scripts/rvm ]] && . $HOME/.rvm/scripts/rvm
 [[ -s /usr/local/rvm/scripts/rvm ]] && . /usr/local/rvm/scripts/rvm
