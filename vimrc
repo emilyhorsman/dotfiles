@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'michalbachowski/vim-wombat256mod'
 Plug 'othree/html5.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'daltoad/vim-jade.git'
+Plug 'digitaltoad/vim-jade'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sensible'
 Plug 'bling/vim-airline'
