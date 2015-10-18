@@ -35,7 +35,7 @@ export PATH="/usr/local/sbin:$PATH"
 [[ -s /usr/local/rvm/bin ]] && export PATH="$PATH:/usr/local/rvm/bin"
 [[ -s $HOME/.composer/vendor/bin ]] && export PATH="$HOME/.composer/vendor/bin:$PATH"
 
-if which rbenv > /dev/null; then; eval "$(rbenv init -)"; fi
+if command -v rbenv >/dev/null 2>&1; then; eval "$(rbenv init -)"; fi
 
 # http://superuser.com/questions/49092/how-to-format-the-path-in-a-zsh-prompt
 setopt PROMPT_SUBST
