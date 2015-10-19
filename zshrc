@@ -17,7 +17,7 @@ bindkey '^f' vi-forward-blank-word
 
 # Load brew install of nvm if it exists, then try home directory
 export NVM_DIR=$HOME/.nvm
-if [[ $(command -v brew >/dev/null 2>&1) && -s $(brew --prefix nvm)/nvm.sh ]]
+if $(command -v brew >/dev/null 2>&1) && [[ -s $(brew --prefix nvm)/nvm.sh ]]
 then
   source $(brew --prefix nvm)/nvm.sh
 elif [[ -s $NVM_DIR/nvm.sh ]]
