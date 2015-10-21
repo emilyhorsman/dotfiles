@@ -20,6 +20,14 @@ fi
 mkdir -p $HOME/.vim/colors
 link_dot_to_home "tomorrow/vim/colors/Tomorrow-Night.vim" ".vim/colors/Tomorrow-Night.vim"
 
+# Load zsh git completions
+if [[ ! -d $HOME/.zsh/git ]]
+then
+  mkdir -p $HOME/.zsh/git
+  git clone -n https://github.com/git/git.git --depth 1 $HOME/.zsh/git
+  git -C "$HOME/.zsh/git" checkout HEAD "contrib/completion/"
+fi
+
 read -r -p "Would you like to open the Tomorrow Night iTerm color scheme? [y/*] " response
 if [[ $response == "y" ]]
 then
