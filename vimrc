@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'osyo-manga/vim-over'
 Plug 'othree/html5.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'digitaltoad/vim-jade'
