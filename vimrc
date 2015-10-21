@@ -21,14 +21,7 @@ call plug#end()
 " Load sensible.vim first
 runtime! plugin/sensible.vim
 
-" OS X: ~/Library/LaunchAgents/environment.plist
-" setenv DEV_HOME_DIRECTORY /path/to/dir/
-" launchctl setenv DEV_HOME_DIRECTORY /path/to/dir/
-if !empty($DEV_HOME_DIRECTORY)
-  cd $DEV_HOME_DIRECTORY
-endif
-
-" http://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x
+filetype plugin on
 
 set noswapfile
 
@@ -41,7 +34,7 @@ set softtabstop=2
 set expandtab
 
 map <C-n> :NERDTreeToggle<CR>
-map <C-/> :NERDComToggleComment<CR>
+map <C-\> :NERDComToggleComment<CR>
 
 colorscheme Tomorrow-Night
 
@@ -64,10 +57,6 @@ if has("gui_running")
   set guioptions+=LlRrb
   set guioptions-=LlRrb
 endif
-
-let g:UltiSnipsExpandTrigger="<C-b>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 autocmd BufRead,BufNewFile *.mustache set filetype=html
 
