@@ -32,6 +32,7 @@ endif
 set noswapfile
 
 set number
+set cursorline
 
 set shiftwidth=2
 set tabstop=2
@@ -78,3 +79,6 @@ if has("patch-7.4-687")
   let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 endif
+
+" Change colour of highlighted current line number.
+hi CursorLineNr guifg=LightBlue ctermfg=LightBlue
