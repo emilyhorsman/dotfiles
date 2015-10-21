@@ -11,7 +11,7 @@
     c  = commit -m
     cm = commit
     l  = log --pretty=format:\"%h - %ar | %s%d [%an]\" --graph
-    b  = branch
+    b  = branch -v
     s  = status
     co = checkout
     ss = status -s
