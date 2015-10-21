@@ -41,6 +41,12 @@ export PATH="/usr/local/sbin:$PATH"
 
 if command -v rbenv >/dev/null 2>&1; then; eval "$(rbenv init -)"; fi
 
+function em() {
+  result=$(grep -m 1 "$1" $HOME/.emojicons.txt | cut -f2)
+  echo $result
+  printf $result | pbcopy
+}
+
 # http://superuser.com/questions/49092/how-to-format-the-path-in-a-zsh-prompt
 setopt PROMPT_SUBST
 
