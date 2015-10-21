@@ -16,9 +16,6 @@ function brew_exists() {
   command -v brew >/dev/null 2>&1
 }
 
-# Ctrl+F to fill in next word from autosuggestion
-bindkey '^f' vi-forward-blank-word
-
 # Load brew install of nvm if it exists, then try home directory
 export NVM_DIR=$HOME/.nvm
 if $(brew_exists) && [[ -s $(brew --prefix nvm)/nvm.sh ]]
