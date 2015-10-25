@@ -12,6 +12,8 @@ then
   antigen apply
 fi
 
+export EDITOR=vim
+
 # Would rather set these in iTerm but frankly this is easier
 bindkey "^[[3~" delete-char
 bindkey "^[[1;9D" backward-word
