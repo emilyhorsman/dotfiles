@@ -70,6 +70,11 @@ function mp4_to_gif() {
   ffmpeg -i $1 -f gif - | gifsicle --optimize=3 > $2
 }
 
+function rdm() {
+  sudo launchctl stop homebrew.mxcl.dnsmasq
+  sudo launchctl start homebrew.mxcl.dnsmasq
+}
+
 if [[ $(hostname -s) =~ "vagrant"  && -d /vagrant/www ]]
 then
   cd /vagrant/www
