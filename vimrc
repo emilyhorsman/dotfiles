@@ -15,6 +15,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'evidens/vim-twig'
 Plug 'vim-scripts/SWIG-syntax'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " https://github.com/tpope/vim-sensible
