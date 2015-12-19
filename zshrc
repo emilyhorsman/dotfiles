@@ -12,6 +12,8 @@ then
   antigen apply
 fi
 
+export EDITOR=vim
+
 # Would rather set these in iTerm but frankly this is easier
 bindkey "^[[3~" delete-char
 bindkey "^[[1;9D" backward-word
@@ -36,7 +38,7 @@ fi
 [[ -s /usr/local/rvm/scripts/rvm ]] && . /usr/local/rvm/scripts/rvm
 [[ -s $HOME/.dotfiles/link_dot.bash ]] && . $HOME/.dotfiles/link_dot.bash
 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 [[ -s $HOME/.rvm/bin ]] && export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s /usr/local/rvm/bin ]] && export PATH="$PATH:/usr/local/rvm/bin"
 [[ -s $HOME/.composer/vendor/bin ]] && export PATH="$HOME/.composer/vendor/bin:$PATH"
@@ -66,6 +68,11 @@ export KEYTIMEOUT=1 # 10 ms
 
 function mp4_to_gif() {
   ffmpeg -i $1 -f gif - | gifsicle --optimize=3 > $2
+}
+
+function rdm() {
+  sudo launchctl stop homebrew.mxcl.dnsmasq
+  sudo launchctl start homebrew.mxcl.dnsmasq
 }
 
 if [[ $(hostname -s) =~ "vagrant"  && -d /vagrant/www ]]
