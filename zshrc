@@ -15,6 +15,8 @@ fi
 export EDITOR=vim
 
 # Would rather set these in iTerm but frankly this is easier
+# iTerm:
+#   Preferences→Profiles→Keys→Load Preset…→xterm Defaults
 bindkey "^[[3~" delete-char
 bindkey "^[[1;9D" backward-word
 bindkey "^[[1;9C" forward-word
