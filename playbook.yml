@@ -27,4 +27,4 @@
         - { src: '~/.dotfiles/tmux.conf', dest: '~/.tmux.conf' }
         - { src: '~/.dotfiles/gitconfig', dest: '~/.gitconfig' }
         - { src: '~/.dotfiles/tomorrow/vim/colors/Tomorrow-Night.vim', dest: '~/.vim/colors/Tomorrow-Night.vim' }
-        - { src: '~/.dotfiles/tmux-vim-select-pane', dest: '~/bin/tmux-vim-select-pane' }
+        - { src: '~/.dotfiles/bin/tmux-vim-select-pane', dest: '~/bin/tmux-vim-select-pane' }
