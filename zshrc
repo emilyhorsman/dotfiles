@@ -70,6 +70,8 @@ zstyle ':vcs_info:*' formats "%F{175}%b%f (%s)"
 export TERM=screen-256color
 export KEYTIMEOUT=1 # 10 ms
 
+alias ta='tmux attach-session -t'
+
 function mp4_to_gif() {
   ffmpeg -i $1 -f gif - | gifsicle --optimize=3 > $2
 }
