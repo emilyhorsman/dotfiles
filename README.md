@@ -2,8 +2,6 @@
 
 Hello, and welcome to how I do the computer thing
 
-![iTerm screenshot](iterm-screenshot.jpg)
-
 ## Quick Setup
 
 ```
