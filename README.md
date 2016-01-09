@@ -5,7 +5,7 @@ Hello, and welcome to how I do the computer thing
 ## Quick Setup
 
 ```
-PLAYBOOK_PATH=$(mktemp -d)/playbook.yml curl https://raw.githubusercontent.com/emilyhorsman/dotfiles/master/playbook.yml -o $PLAYBOOK_PATH && ansible-playbook $PLAYBOOK_PATH -i 'localhost,' -c local
+PLAYBOOK_PATH=$(mktemp -d)/playbook.yml; curl https://raw.githubusercontent.com/emilyhorsman/dotfiles/master/playbook.yml -o $PLAYBOOK_PATH && ansible-playbook $PLAYBOOK_PATH -i 'localhost,' -c local
 ```
 
 ### (Breakdown)
