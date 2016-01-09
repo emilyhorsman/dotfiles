@@ -1,0 +1,28 @@
+---
+- hosts: all
+  tasks:
+    - name: Download dotfiles
+      git:
+        repo: https://github.com/emilyhorsman/dotfiles.git
+        dest: ~/.dotfiles
+    - name: Download fork of tomorrow night theme
+      git:
+        repo: https://github.com/emilyhorsman/tomorrow-theme.git
+        dest: ~/.dotfiles/tomorrow
+    - name: Make directories
+      file: state=directory path={{ item }}
+      with_items:
+        - ~/.vim/autoload
+        - ~/.vim/colors
+    - name: Download vim plugged
+      get_url:
+        url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        dest: ~/.vim/autoload/plug.vim
+    - name: Link config files
+      file: src={{ item.src }} dest={{ item.dest }} state=link
+      with_items:
+        - { src: '~/.dotfiles/zshrc', dest: '~/.zshrc' }
+        - { src: '~/.dotfiles/vimrc', dest: '~/.vimrc' }
+        - { src: '~/.dotfiles/tmux.conf', dest: '~/.tmux.conf' }
+        - { src: '~/.dotfiles/gitconfig', dest: '~/.gitconfig' }
+        - { src: '~/.dotfiles/tomorrow/vim/colors/Tomorrow-Night.vim', dest: '~/.vim/colors/Tomorrow-Night.vim' }
