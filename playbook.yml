@@ -11,7 +11,7 @@
         dest: ~/.dotfiles/tomorrow
     - name: Download tmux plugin manager
       git:
-        repo: https://github.com/tmux-plugins/tmux-continuum.git
+        repo: https://github.com/tmux-plugins/tpm
         dest: ~/.tmux/plugins/tpm
     - name: Make directories
       file: state=directory path={{ item }}
