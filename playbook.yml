@@ -13,6 +13,10 @@
       git:
         repo: https://github.com/tmux-plugins/tpm
         dest: ~/.tmux/plugins/tpm
+    - name: Download Facebook PathPicker
+      git:
+        repo: https://github.com/facebook/PathPicker.git
+        dest: ~/.dotfiles/fpp
     - name: Make directories
       file: state=directory path={{ item }}
       with_items:
@@ -32,3 +36,4 @@
         - { src: '~/.dotfiles/gitconfig', dest: '~/.gitconfig' }
         - { src: '~/.dotfiles/tomorrow/vim/colors/Tomorrow-Night.vim', dest: '~/.vim/colors/Tomorrow-Night.vim' }
         - { src: '~/.dotfiles/bin/tmux-vim-select-pane', dest: '~/bin/tmux-vim-select-pane' }
+        - { src: '~/.dotfiles/fpp/fpp', dest: '~/bin/fpp' }
