@@ -35,3 +35,12 @@ $ sudo pip install ansible
 ## tmux Plugin Manager
 
 Use `prefix + I` to fetch plugins and source them.
+
+## Brew Bundle
+
+https://github.com/Homebrew/homebrew-bundle
+
+```
+$ brew tap Homebrew/bundle
+$ brew bundle
+```
