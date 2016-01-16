@@ -44,3 +44,14 @@ https://github.com/Homebrew/homebrew-bundle
 $ brew tap Homebrew/bundle
 $ brew bundle
 ```
+
+## Key Bindings
+
+Possibly the most annoying, unsolved problem in human-computer interaction.
+
+### iTerm
+
+Preferences→Profiles→Keys
+
+* ⌥← `Action: Send Escape Sequence` `[1;3D`
+* ⌥→ `Action: Send Escape Sequence` `[1;3C`
