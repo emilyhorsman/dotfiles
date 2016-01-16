@@ -31,3 +31,7 @@ Install Ansible [via pip](http://docs.ansible.com/ansible/intro_installation.htm
 ```
 $ sudo pip install ansible
 ```
+
+## tmux Plugin Manager
+
+Use `prefix + I` to fetch plugins and source them.

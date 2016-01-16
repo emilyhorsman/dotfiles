@@ -9,6 +9,10 @@
       git:
         repo: https://github.com/emilyhorsman/tomorrow-theme.git
         dest: ~/.dotfiles/tomorrow
+    - name: Download tmux plugin manager
+      git:
+        repo: https://github.com/tmux-plugins/tmux-continuum.git
+        dest: ~/.tmux/plugins/tpm
     - name: Make directories
       file: state=directory path={{ item }}
       with_items:
