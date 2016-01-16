@@ -18,8 +18,10 @@ export EDITOR=vim
 # iTerm:
 #   Preferences→Profiles→Keys→Load Preset…→xterm Defaults
 bindkey "^[[3~" delete-char
-bindkey "^[[1;9D" backward-word
-bindkey "^[[1;9C" forward-word
+bindkey "^[[1;3D" backward-word
+bindkey "^[[1;3C" forward-word
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
 
 function brew_exists() {
   command -v brew >/dev/null 2>&1
