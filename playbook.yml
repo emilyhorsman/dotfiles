@@ -4,7 +4,7 @@
     - name: Pull git repos
       git: repo={{ item.repo }} dest={{ item.dest }}
       with_items:
-        - repo: https://github.com/emilyhorsman/dotfiles.git
+        - repo: git@github.com:emilyhorsman/dotfiles.git
           dest: ~/.dotfiles
         - repo: https://github.com/emilyhorsman/tomorrow-theme.git
           dest: ~/.dotfiles/tomorrow
