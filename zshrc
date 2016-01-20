@@ -47,6 +47,7 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 [[ -s $HOME/.composer/vendor/bin ]] && export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 if command -v rbenv >/dev/null 2>&1; then; eval "$(rbenv init -)"; fi
+if command -v virtualenvwrapper.sh >/dev/null 2>&1; then; source virtualenvwrapper.sh; fi
 
 function em() {
   result=$(grep -m 1 "$1" $HOME/.emojicons.txt | cut -f2)
