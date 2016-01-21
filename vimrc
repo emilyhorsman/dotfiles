@@ -17,6 +17,7 @@ Plug 'evidens/vim-twig'
 Plug 'vim-scripts/SWIG-syntax'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'rust-lang/rust.vim'
+Plug 'hdima/python-syntax'
 call plug#end()
 
 " https://github.com/tpope/vim-sensible
