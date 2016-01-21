@@ -29,6 +29,7 @@ set noswapfile
 
 set number
 set cursorline
+set showmatch
 
 set shiftwidth=2
 set tabstop=2
@@ -74,3 +75,8 @@ endif
 
 " Change colour of highlighted current line number.
 hi CursorLineNr guifg=LightBlue ctermfg=LightBlue
+
+" Python settings
+au BufRead,BufNewFile *py,*pyw set tabstop=8
+au BufRead,BufNewFile *py,*pyw set shiftwidth=4
+au BufRead,BufNewFile *py,*pyw set softtabstop=4
