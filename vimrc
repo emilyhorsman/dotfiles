@@ -74,6 +74,14 @@ if has("patch-7.4-687")
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 endif
 
+" Allow mouse to resize buffers
+set mouse+=a
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
+
 " Change colour of highlighted current line number.
 hi CursorLineNr guifg=LightBlue ctermfg=LightBlue
 
