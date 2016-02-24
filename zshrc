@@ -38,6 +38,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 
 [[ -s $HOME/.gvm/scripts/gvm ]] && . $HOME/.gvm/scripts/gvm
 [[ -s $HOME/.rvm/scripts/rvm ]] && . $HOME/.rvm/scripts/rvm
+[[ -s /usr/local/share/chruby/chruby.sh ]] && . /usr/local/share/chruby/chruby.sh
 [[ -s /usr/local/rvm/scripts/rvm ]] && . /usr/local/rvm/scripts/rvm
 [[ -s $HOME/.dotfiles/link_dot.bash ]] && . $HOME/.dotfiles/link_dot.bash
 
