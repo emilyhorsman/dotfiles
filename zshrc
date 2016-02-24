@@ -42,12 +42,10 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 [[ -s $HOME/.dotfiles/link_dot.bash ]] && . $HOME/.dotfiles/link_dot.bash
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-[[ -s $HOME/.rbenv/bin ]] && export PATH="$HOME/.rbenv/bin:$PATH"
 [[ -s $HOME/.rvm/bin ]] && export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s /usr/local/rvm/bin ]] && export PATH="$PATH:/usr/local/rvm/bin"
 [[ -s $HOME/.composer/vendor/bin ]] && export PATH="$HOME/.composer/vendor/bin:$PATH"
 
-if command -v rbenv >/dev/null 2>&1; then; eval "$(rbenv init -)"; fi
 if command -v virtualenvwrapper.sh >/dev/null 2>&1; then; source virtualenvwrapper.sh; fi
 
 function em() {
