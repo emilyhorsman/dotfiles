@@ -1,6 +1,7 @@
 [user]
     name = Emily Horsman
     email = me@emilyhorsman.com
+    signingkey = 1A42163D
 [core]
     excludesfile = ~/.gitignore_global
     editor = vim
