@@ -13,6 +13,7 @@ then
 fi
 
 export EDITOR=vim
+export XDG_CONFIG_HOME=$HOME/.config
 
 bindkey "^[[3~" delete-char
 bindkey "^[[1;3D" backward-word
