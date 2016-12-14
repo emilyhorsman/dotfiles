@@ -13,6 +13,7 @@
     cm = commit
     l  = log --pretty=format:\"%h - %ar | %s%d [%an]\" --graph
     b  = branch -v
+    cb = rev-parse --abbrev-ref HEAD
     s  = status
     co = checkout
     ss = status -s
