@@ -17,6 +17,7 @@ Plug 'elmcast/elm-vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'Shougo/vimproc'
 Plug 'eagletmt/ghcmod-vim'
+Plug 'othree/yajs'
 call plug#end()
 
 filetype plugin on
