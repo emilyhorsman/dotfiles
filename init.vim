@@ -18,6 +18,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'Shougo/vimproc'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'othree/yajs'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 filetype plugin on
@@ -25,6 +26,7 @@ filetype plugin on
 set noswapfile
 
 set number
+set ruler
 set cursorline
 set showmatch
 
