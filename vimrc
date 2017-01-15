@@ -18,6 +18,10 @@ Plug 'vim-scripts/SWIG-syntax'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'rust-lang/rust.vim'
 Plug 'hdima/python-syntax'
+Plug 'elmcast/elm-vim'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'Shougo/vimproc'
+Plug 'eagletmt/ghcmod-vim'
 call plug#end()
 
 " https://github.com/tpope/vim-sensible

@@ -47,6 +47,7 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 [[ -s $HOME/.rvm/bin ]] && export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s /usr/local/rvm/bin ]] && export PATH="$PATH:/usr/local/rvm/bin"
 [[ -s $HOME/.composer/vendor/bin ]] && export PATH="$HOME/.composer/vendor/bin:$PATH"
+[[ -s $HOME/.cabal/bin ]] && export PATH="$HOME/.cabal/bin:$PATH"
 
 if command -v virtualenvwrapper.sh >/dev/null 2>&1; then; source virtualenvwrapper.sh; fi
 
@@ -72,6 +73,7 @@ export TERM=screen-256color
 export KEYTIMEOUT=1 # 10 ms
 
 alias ta='tmux attach-session -t'
+alias pm='python manage.py'
 
 function mp4_to_gif() {
   ffmpeg -i $1 -f gif - | gifsicle --optimize=3 > $2
