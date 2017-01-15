@@ -10,12 +10,16 @@
           dest: ~/.dotfiles/tomorrow
         - repo: https://github.com/tmux-plugins/tpm
           dest: ~/.tmux/plugins/tpm
+        - repo: https://github.com/asdf-vm/asdf
+          dest: ~/.asdf
+          version: v0.2.1
     - name: Make directories
       file: state=directory path={{ item }}
       with_items:
         - ~/.config/nvim/colors
         - ~/.config/nvim/autoload
         - ~/.config/fish
+        - ~/.config/fish/completions
         - ~/.config/sway
         - ~/bin
     - name: Download vim plugged
@@ -25,6 +29,7 @@
     - name: Link config files
       file: src={{ item.src }} dest={{ item.dest }} state=link
       with_items:
+        - { src: '~/.asdf/completions/asdf.fish', dest: '~/.config/fish/completions/asdf.fish' }
         - { src: '~/.dotfiles/config.fish', dest: '~/.config/fish/config.fish' }
         - { src: '~/.dotfiles/init.vim', dest: '~/.config/nvim/init.vim' }
         - { src: '~/.dotfiles/config.sway', dest: '~/.config/sway/config' }
