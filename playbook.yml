@@ -16,6 +16,7 @@
         - ~/.config/nvim/colors
         - ~/.config/nvim/autoload
         - ~/.config/fish
+        - ~/.config/sway
         - ~/bin
     - name: Download vim plugged
       get_url:
@@ -26,6 +27,7 @@
       with_items:
         - { src: '~/.dotfiles/config.fish', dest: '~/.config/fish/config.fish' }
         - { src: '~/.dotfiles/init.vim', dest: '~/.config/nvim/init.vim' }
+        - { src: '~/.dotfiles/config.sway', dest: '~/.config/sway/config' }
         - { src: '~/.dotfiles/zshrc', dest: '~/.zshrc' }
         - { src: '~/.dotfiles/vimrc', dest: '~/.vimrc' }
         - { src: '~/.dotfiles/tmux.conf', dest: '~/.tmux.conf' }
