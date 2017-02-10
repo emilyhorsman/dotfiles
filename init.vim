@@ -15,7 +15,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'hdima/python-syntax'
 Plug 'elmcast/elm-vim'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'Shougo/vimproc'
+Plug 'Shougo/vimproc', {'do': 'make'}
 Plug 'eagletmt/ghcmod-vim'
 Plug 'othree/yajs'
 Plug 'mxw/vim-jsx'
