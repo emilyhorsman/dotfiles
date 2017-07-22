@@ -60,3 +60,5 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 au BufRead,BufNewFile *py,*pyw set tabstop=8
 au BufRead,BufNewFile *py,*pyw set shiftwidth=4
 au BufRead,BufNewFile *py,*pyw set softtabstop=4
+
+set rtp+=/usr/local/opt/fzf
