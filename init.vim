@@ -53,9 +53,6 @@ nnoremap <Leader>v :vsplit<enter>
 vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 " Python settings
 au BufRead,BufNewFile *py,*pyw set tabstop=8
 au BufRead,BufNewFile *py,*pyw set shiftwidth=4
