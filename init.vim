@@ -61,3 +61,6 @@ au BufRead,BufNewFile *py,*pyw set shiftwidth=4
 au BufRead,BufNewFile *py,*pyw set softtabstop=4
 
 set rtp+=/usr/local/opt/fzf
+
+" Rust settings
+let g:rustfmt_autosave = 1
