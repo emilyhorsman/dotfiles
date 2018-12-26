@@ -21,6 +21,8 @@ Plug 'othree/yajs'
 Plug 'mxw/vim-jsx'
 call plug#end()
 
+set mouse=a
+
 filetype plugin on
 
 set noswapfile
