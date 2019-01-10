@@ -15,6 +15,9 @@
 ;; Lets get rid of the default emacs angry fruit salad.
 (load-theme 'atom-dark t)
 
+(load-file (let ((coding-system-for-read 'utf-8))
+	     (shell-command-to-string "agda-mode locate")))
+
 (when (version<= "26.0.50" emacs-version)
   (global-display-line-numbers-mode))
 
