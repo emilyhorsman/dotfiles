@@ -7,6 +7,7 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+(setq evil-want-C-i-jump nil)
 
 ;; A decade of vim yields a vim user forever.
 (require 'evil)
