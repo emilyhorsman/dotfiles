@@ -29,6 +29,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(vc-follow-symlinks t)
  '(package-selected-packages (quote (org atom-dark-theme evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
