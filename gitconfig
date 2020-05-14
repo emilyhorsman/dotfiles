@@ -1,7 +1,7 @@
 [user]
     name = Emily Horsman
     email = me@emilyhorsman.com
-    signingkey = 1A42163D
+	signingkey = 30254993F9E999DA
 [core]
     excludesfile = ~/.gitignore_global
     editor = nvim
@@ -27,3 +27,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[commit]
+	gpgsign = true
