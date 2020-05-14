@@ -19,6 +19,8 @@ Plug 'Shougo/vimproc', {'do': 'make'}
 Plug 'eagletmt/ghcmod-vim'
 Plug 'othree/yajs'
 Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+Plug 'prettier/vim-prettier'
 call plug#end()
 
 set mouse=a
@@ -64,3 +66,7 @@ set rtp+=/usr/local/opt/fzf
 
 " Rust settings
 let g:rustfmt_autosave = 1
+
+" vim-prettier
+let g:prettier#autoformat_config_present = 1
+let g:prettier#exec_cmd_async = 1
