@@ -3,5 +3,5 @@ Description=Sync /mnt/storage to Backblaze B2
 
 [Service]
 Type=oneshot
-ExecStart=b2 sync --excludeDirRegex '.*\.DS_Store.*|(.*lost\+found.*)' --threads 16 /mnt/storage b2://cube-backup/
+ExecStart=b2 sync --skipNewer --excludeDirRegex '.*\.DS_Store.*|(.*lost\+found.*)' --threads 16 /mnt/storage b2://cube-backup/
 User=root
