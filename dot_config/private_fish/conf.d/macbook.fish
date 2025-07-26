@@ -1,10 +1,5 @@
 # Machine-specific configuration for MacBook
 
-if status is-interactive
-    # Starship prompt
-    starship init fish | source
-end
-
 # Created by `pipx` on 2025-05-10 02:17:57
 set PATH $PATH /Users/emily/.local/bin
 

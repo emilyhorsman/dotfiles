@@ -1,3 +1,8 @@
+# Packages
+
+- [chezmoi](https://www.chezmoi.io/)
+- [starship](https://starship.rs/)
+
 # Themes
 
 - Light mode: Catppuccin Latte

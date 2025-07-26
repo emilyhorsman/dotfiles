@@ -1,5 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    starship init fish | source
     
     # Custom aliases
     alias l="eza -al -s size -r --icons --git"
