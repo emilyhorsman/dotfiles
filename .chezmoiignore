@@ -1,0 +1,3 @@
+{{- if ne .chezmoi.hostname "Emilys-MBP" }}
+fish/conf.d/macbook.fish
+{{- end }}
