@@ -1,6 +1,7 @@
 [user]
 	name = Emily Horsman
 	email = me@emilyhorsman.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExD7Y8hfpHA8qCXxhWxMRqIAYTMXpAO/ZhAWw8JRHhv
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = nvim
@@ -46,3 +47,9 @@
 	prompt = false
 [mergetool "nvimdiff"]
 	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
