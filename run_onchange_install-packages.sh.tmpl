@@ -1,0 +1,54 @@
+#!/bin/bash
+# packages.yaml hash: {{ include ".chezmoidata/packages.yaml" | sha256sum }}
+
+<<'DOCUMENTATION'
+# Package Installation Script
+
+This script automatically installs packages defined in `.chezmoidata/packages.yaml`
+using the appropriate package manager for your operating system.
+
+## Supported Operating Systems
+
+- **macOS**: Uses Homebrew (`brew`)
+- **Arch Linux**: Uses pacman
+
+## How it works
+
+1. The script reads the global package list from `.chezmoidata/packages.yaml`
+2. Detects your operating system using chezmoi template variables
+3. For each package, checks if it's already installed
+4. Installs missing packages using the appropriate package manager
+
+## Triggering
+
+This is a `run_onchange` script, which means it runs automatically when:
+- The packages.yaml file changes (detected via SHA256 hash)
+- You run `chezmoi apply`
+DOCUMENTATION
+
+{{ if eq .chezmoi.os "darwin" -}}
+echo "Installing packages on macOS using Homebrew..."
+{{ range .packages.global -}}
+if ! brew list {{ . }} &>/dev/null; then
+    echo "Installing {{ . }}..."
+    brew install {{ . }} || echo "Failed to install {{ . }}, skipping..."
+else
+    echo "{{ . }} is already installed"
+fi
+{{ end -}}
+
+{{ else if eq .chezmoi.os "linux" -}}
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+echo "Installing packages on Arch Linux using pacman..."
+{{ range .packages.global -}}
+if ! pacman -Qs "^{{ . }}$" &>/dev/null; then
+    echo "Installing {{ . }}..."
+    sudo pacman -S --noconfirm {{ . }} || echo "Failed to install {{ . }}, skipping..."
+else
+    echo "{{ . }} is already installed"
+fi
+{{ end -}}
+{{ end -}}
+{{ end -}}
+
+echo "Package installation complete!"

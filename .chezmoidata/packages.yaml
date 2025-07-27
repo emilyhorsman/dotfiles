@@ -1,0 +1,13 @@
+packages:
+  global:
+    - fish
+    - eza
+    - bat
+    - ghostty
+    - jq
+    - starship
+    - podman
+    - ripgrep
+    - curl
+    - wget
+    - fzf
