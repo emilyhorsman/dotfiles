@@ -1,0 +1,48 @@
+[user]
+	name = Emily Horsman
+	email = me@emilyhorsman.com
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+	pager = delta --paging=always
+[color]
+	ui = auto
+[alias]
+	a  = add
+	c  = commit -m
+	cm = commit
+	l  = log --pretty=format:\"%h - %ar | %s%d [%an]\" --graph
+	b  = branch -v
+	cb = rev-parse --abbrev-ref HEAD
+	s  = status
+	co = checkout
+	ss = status -s
+	d  = diff
+	ds = diff --staged
+	amend = commit --amend --no-edit
+	amendm = commit --amend
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[interactive]
+	diffFilter = delta --color-only
+[add "interactive"]
+	useBuiltin = false
+[include]
+	path = ~/.config/delta/themes.gitconfig
+[delta]
+	features = catppuccin-mocha catppuccin-latte
+	navigate = true
+	pager = moar -mousemode scroll
+	side-by-side = true
+	true-color = always
+[merge]
+	tool = nvimdiff
+[mergetool]
+	prompt = false
+[mergetool "nvimdiff"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'

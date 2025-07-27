@@ -11,3 +11,5 @@ packages:
     - curl
     - wget
     - fzf
+    - moar
+    - git-delta
