@@ -13,3 +13,4 @@ packages:
     - fzf
     - moar
     - git-delta
+    - 1password-cli
