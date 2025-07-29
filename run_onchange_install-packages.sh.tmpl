@@ -14,10 +14,11 @@ using the appropriate package manager for your operating system.
 
 ## How it works
 
-1. The script reads the global package list from `.chezmoidata/packages.yaml`
+1. The script reads the package lists from `.chezmoidata/packages.yaml`
 2. Detects your operating system using chezmoi template variables
 3. For each package, checks if it's already installed
 4. Installs missing packages using the appropriate package manager
+5. On Arch Linux, installs both global packages and arch-specific packages
 
 ## Triggering
 
@@ -47,6 +48,16 @@ if ! pacman -Qs "^{{ . }}$" &>/dev/null; then
 else
     echo "{{ . }} is already installed"
 fi
+{{ end -}}
+{{ if .packages.arch -}}
+{{ range .packages.arch -}}
+if ! pacman -Qs "^{{ . }}$" &>/dev/null; then
+    echo "Installing {{ . }}..."
+    sudo pacman -S --noconfirm {{ . }} || echo "Failed to install {{ . }}, skipping..."
+else
+    echo "{{ . }} is already installed"
+fi
+{{ end -}}
 {{ end -}}
 {{ end -}}
 {{ end -}}

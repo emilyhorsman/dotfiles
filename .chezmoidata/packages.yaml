@@ -15,3 +15,10 @@ packages:
     - git-delta
     - 1password-cli
     - ranger
+  arch:
+    - mako
+    - xdg-desktop-portal-gtk
+    - xdg-desktop-portal-gnome
+    - gnome-keyring
+    - xwayland-satellite
+    - xdg-user-dirs
