@@ -24,6 +24,7 @@ packages:
     # Development tools
     - git-delta     # Git diff viewer
     - podman        # Container runtime
+    - mise          # Language version manager
 
     # Security and utilities
     - 1password-cli # Password manager CLI
