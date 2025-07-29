@@ -1,28 +1,46 @@
 packages:
+  # Cross-platform packages available on all systems
   global:
-    - fish
-    - eza
-    - bat
-    - ghostty
-    - jq
-    - starship
-    - podman
-    - ripgrep
-    - curl
-    - wget
-    - fzf
-    - moar
-    - git-delta
-    - 1password-cli
-    - ranger
-    - fastfetch
-    - zellij
+    # Shell and terminal
+    - fish          # Modern shell with autocompletion
+    - starship      # Cross-shell prompt
+    - ghostty       # Terminal emulator
+
+    # File management and navigation
+    - eza           # Modern ls replacement
+    - bat           # Cat clone with syntax highlighting
+    - ranger        # Terminal file manager
+    - fzf           # Fuzzy finder
+
+    # Text processing and search
+    - ripgrep       # Fast grep alternative
+    - jq            # JSON processor
+    - moar          # Pager with syntax highlighting
+
+    # Network tools
+    - curl          # HTTP client
+    - wget          # Web downloader
+
+    # Development tools
+    - git-delta     # Git diff viewer
+    - podman        # Container runtime
+
+    # Security and utilities
+    - 1password-cli # Password manager CLI
+    - fastfetch     # System information tool
+
+  # Arch Linux specific packages
   arch:
-    - mako
+    # Portals recommended by Niri
     - xdg-desktop-portal-gtk
     - xdg-desktop-portal-gnome
     - gnome-keyring
+
+    # Wayland and X11 support
     - xwayland-satellite
-    - xdg-user-dirs
-    - bemoji
-    - fuzzel
+
+    # Desktop environment
+    - mako          # Notification daemon
+    - xdg-user-dirs # User directories
+    - fuzzel        # Application launcher
+    - bemoji        # Emoji picker
