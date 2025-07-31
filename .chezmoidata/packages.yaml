@@ -5,6 +5,7 @@ packages:
     - fish          # Modern shell with autocompletion
     - starship      # Cross-shell prompt
     - ghostty       # Terminal emulator
+    - zellij        # Terminal multiplexer
 
     # File management and navigation
     - eza           # Modern ls replacement

@@ -6,4 +6,7 @@ if status is-interactive
     alias cat="bat"
 end
 
+# Environment variables
+set -gx EDITOR nvim
+
 # Machine-specific configs are loaded from conf.d/
