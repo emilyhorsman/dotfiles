@@ -1,0 +1,12 @@
+* {
+	font-family: 'FreeMono', monospace;
+	font-size: 16px;
+}
+
+window#waybar {
+	background-color: #ccd0da;
+}
+
+#clock {
+	padding: 5px 10px;
+}
