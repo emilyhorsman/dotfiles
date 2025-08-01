@@ -16,7 +16,6 @@ packages:
     # Text processing and search
     - ripgrep       # Fast grep alternative
     - jq            # JSON processor
-    - moar          # Pager with syntax highlighting
 
     # Network tools
     - curl          # HTTP client
@@ -28,7 +27,6 @@ packages:
     - mise          # Language version manager
 
     # Security and utilities
-    - 1password-cli # Password manager CLI
     - fastfetch     # System information tool
 
   # Arch Linux specific packages
@@ -45,4 +43,3 @@ packages:
     - mako          # Notification daemon
     - xdg-user-dirs # User directories
     - fuzzel        # Application launcher
-    - bemoji        # Emoji picker
