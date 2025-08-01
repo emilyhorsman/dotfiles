@@ -180,6 +180,12 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "wl-paste --watch cliphist store"
 spawn-at-startup "swww-daemon"
 
+// Set DISPLAY environment variable for X11 applications
+// xwayland-satellite typically uses :0, but will increment if taken
+environment {
+    DISPLAY ":0"
+}
+
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
