@@ -1,6 +1,7 @@
 if status is-interactive
     starship init fish | source
-    
+    mise activate fish | source
+
     # Custom aliases
     alias l="eza -al -s size -r --icons --git"
     alias cat="bat"
