@@ -15,6 +15,11 @@ window#waybar {
 #cpu,
 #temperature,
 #custom-gpu,
-#memory {
-	padding: 5px 10px;
+#memory,
+#network {
+	padding: 5px 12px;
+}
+
+#temperature {
+	padding-left: 0px;
 }
