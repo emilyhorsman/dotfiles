@@ -27,17 +27,17 @@ require("lazy").setup({
     priority = 1000,
     config = function()
       local catppuccin = require("catppuccin")
-      
+
       -- Determine flavor based on TERM_BACKGROUND
       local term_bg = vim.env.TERM_BACKGROUND
       local flavor = "mocha" -- default
-      
+
       if term_bg == "light" then
         flavor = "latte"
       elseif term_bg == "dark" then
         flavor = "mocha"
       end
-      
+
       catppuccin.setup({
         flavour = flavor,
         background = {
@@ -45,7 +45,7 @@ require("lazy").setup({
           dark = "mocha",
         },
       })
-      
+
       vim.cmd.colorscheme "catppuccin"
     end,
   },
@@ -125,6 +125,14 @@ require("lazy").setup({
     config = function()
       require("tidy").setup({
         filetype_exclude = { "markdown", "diff" }
+      })
+    end,
+  },
+  {
+    "mrjones2014/smart-splits.nvim",
+    config = function()
+      require("smart-splits").setup({
+        multiplexer_integration = "zellij",
       })
     end,
   }

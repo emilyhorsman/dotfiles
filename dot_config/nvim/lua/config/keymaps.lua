@@ -1,20 +1,19 @@
--- Window navigation with cmd+hjkl (only works in GUI NeoVim)
-vim.keymap.set('n', '<D-h>', '<C-w>h', { desc = 'Go to left window' })
-vim.keymap.set('n', '<D-j>', '<C-w>j', { desc = 'Go to lower window' })
-vim.keymap.set('n', '<D-k>', '<C-w>k', { desc = 'Go to upper window' })
-vim.keymap.set('n', '<D-l>', '<C-w>l', { desc = 'Go to right window' })
+-- Smart splits navigation with Alt+hjkl (seamless with Zellij)
+vim.keymap.set('n', '<A-h>', require('smart-splits').move_cursor_left, { desc = 'Navigate left (Neovim/Zellij)' })
+vim.keymap.set('n', '<A-j>', require('smart-splits').move_cursor_down, { desc = 'Navigate down (Neovim/Zellij)' })
+vim.keymap.set('n', '<A-k>', require('smart-splits').move_cursor_up, { desc = 'Navigate up (Neovim/Zellij)' })
+vim.keymap.set('n', '<A-l>', require('smart-splits').move_cursor_right, { desc = 'Navigate right (Neovim/Zellij)' })
 
--- Also map in insert mode to switch without leaving insert mode
-vim.keymap.set('i', '<D-h>', '<C-\\><C-N><C-w>h', { desc = 'Go to left window' })
-vim.keymap.set('i', '<D-j>', '<C-\\><C-N><C-w>j', { desc = 'Go to lower window' })
-vim.keymap.set('i', '<D-k>', '<C-\\><C-N><C-w>k', { desc = 'Go to upper window' })
-vim.keymap.set('i', '<D-l>', '<C-\\><C-N><C-w>l', { desc = 'Go to right window' })
+-- Also map in insert and visual modes
+vim.keymap.set('i', '<A-h>', function() vim.cmd('stopinsert'); require('smart-splits').move_cursor_left() end, { desc = 'Navigate left (Neovim/Zellij)' })
+vim.keymap.set('i', '<A-j>', function() vim.cmd('stopinsert'); require('smart-splits').move_cursor_down() end, { desc = 'Navigate down (Neovim/Zellij)' })
+vim.keymap.set('i', '<A-k>', function() vim.cmd('stopinsert'); require('smart-splits').move_cursor_up() end, { desc = 'Navigate up (Neovim/Zellij)' })
+vim.keymap.set('i', '<A-l>', function() vim.cmd('stopinsert'); require('smart-splits').move_cursor_right() end, { desc = 'Navigate right (Neovim/Zellij)' })
 
--- Alternative: Window navigation with ctrl+hjkl (works in terminal)
-vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Go to left window' })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Go to lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Go to right window' })
+vim.keymap.set('v', '<A-h>', require('smart-splits').move_cursor_left, { desc = 'Navigate left (Neovim/Zellij)' })
+vim.keymap.set('v', '<A-j>', require('smart-splits').move_cursor_down, { desc = 'Navigate down (Neovim/Zellij)' })
+vim.keymap.set('v', '<A-k>', require('smart-splits').move_cursor_up, { desc = 'Navigate up (Neovim/Zellij)' })
+vim.keymap.set('v', '<A-l>', require('smart-splits').move_cursor_right, { desc = 'Navigate right (Neovim/Zellij)' })
 
 -- Split windows
 vim.keymap.set('n', '<leader>v', ':vsplit<CR>', { desc = 'Split window vertically' })
