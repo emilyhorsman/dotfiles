@@ -10,6 +10,5 @@
   "render-markdown.nvim": { "branch": "main", "commit": "eec00fbfd7273cdfa0a1154dbef0bb983641eaf8" },
   "smart-splits.nvim": { "branch": "master", "commit": "f46b79cf9e83b0a13a4e3f83e3bd5b0d2f172bf2" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "1f08ed60cafc8f6168b72b80be2b2ea149813e55" },
-  "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
-  "tidy.nvim": { "branch": "main", "commit": "c862cae8faba9e587774d40e38cb9c979a0300f0" }
+  "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" }
 }

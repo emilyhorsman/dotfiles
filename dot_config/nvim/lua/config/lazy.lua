@@ -119,20 +119,34 @@ require("lazy").setup({
       end,
     },
   },
-  {
-    "mcauley-penney/tidy.nvim",
-    event = { "BufWritePre" },
-    config = function()
-      require("tidy").setup({
-        filetype_exclude = { "markdown", "diff" }
-      })
-    end,
-  },
+  -- {
+  --   "mcauley-penney/tidy.nvim",
+  --   event = { "BufWritePre" },
+  --   config = function()
+  --     require("tidy").setup({
+  --       filetype_exclude = { "markdown", "diff" }
+  --     })
+  --   end,
+  -- },
   {
     "mrjones2014/smart-splits.nvim",
     config = function()
       require("smart-splits").setup({
         multiplexer_integration = "zellij",
+      })
+    end,
+  },
+  {
+    "bngarren/checkmate.nvim",
+    ft = "markdown",
+    config = function()
+      require("checkmate").setup({
+        -- Archive completed tasks to bottom
+        archive = {
+          enabled = true,
+          position = "bottom",
+          section_header = "## Completed",
+        },
       })
     end,
   }
