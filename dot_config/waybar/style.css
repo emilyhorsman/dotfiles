@@ -1,12 +1,20 @@
 * {
-	font-family: 'FreeMono', monospace;
-	font-size: 16px;
+	font-family: 'JetBrains Mono', monospace;
+	font-weight: 600;
+	font-size: 14px;
 }
 
 window#waybar {
-	background-color: #ccd0da;
+	background-color: rgba(23, 41, 83, 0.8);
+	color: #ffffff;
+	border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
 }
 
-#clock {
+#clock,
+#bluetooth,
+#cpu,
+#temperature,
+#custom-gpu,
+#memory {
 	padding: 5px 10px;
 }

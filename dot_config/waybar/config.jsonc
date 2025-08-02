@@ -1,8 +1,30 @@
 {
 	"layer": "top",
-	"modules-left": ["niri/workspaces"],
-	"modules-right": ["clock"],
+	"modules-left": ["bluetooth"],
+	"modules-right": ["memory", "cpu", "temperature", "custom/gpu", "clock"],
 	"clock": {
-		"format": "{:%a, %d. %b  %H:%M}"
+		"format": "{:%a, %b %d %I:%M%p}"
+	},
+	"bluetooth": {
+		"format-connected-battery": "{device_alias} {device_battery_percentage}%"
+	},
+	"cpu": {
+		"interval": 2,
+		"format": "{load} {usage}%"
+	},
+	"temperature": {
+		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+		"format": "{temperatureC}°C"
+	},
+	"custom/gpu": {
+		"exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | awk -F', ' '{print $1\"% \"$2\"°C\"}'",
+		"format": "GPU {}",
+		"interval": 2,
+		"return-type": "text",
+		"on-click": "notify-send 'NVIDIA GPU Information' \"$(nvidia-smi --query-gpu=name,utilization.gpu,temperature.gpu,power.draw,memory.used,memory.total,driver_version --format=csv,noheader | awk -F', ' '{print \"GPU: \"$1\"\\nUsage: \"$2\"\\nTemp: \"$3\"°C\\nPower: \"$4\"W\\nVRAM: \"$5\"MB / \"$6\"MB\\nDriver: \"$7}')\""
+	},
+	"memory": {
+		"interval": 30,
+		"format": "{used:0.1f}G"
 	}
 }
