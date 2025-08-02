@@ -4,3 +4,7 @@ arch_scripts
 {{- if ne .chezmoi.hostname "Emilys-MBP" }}
 .config/fish/conf.d/macbook.fish
 {{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+.config/waybar/
+.config/niri/
+{{- end }}
