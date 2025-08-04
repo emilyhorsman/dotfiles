@@ -10,4 +10,7 @@ end
 # Environment variables
 set -gx EDITOR nvim
 
+# Add ~/.local/bin to PATH
+fish_add_path ~/.local/bin
+
 # Machine-specific configs are loaded from conf.d/
