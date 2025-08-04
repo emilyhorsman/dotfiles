@@ -1,11 +1,13 @@
 {
 	"layer": "top",
 	"modules-left": ["bluetooth", "systemd-failed-units"],
-	"modules-right": ["network", "memory", "cpu", "temperature", "custom/gpu", "clock"],
+	"modules-center": ["wlr/workspaces"],
+	"modules-right": ["custom/ping", "network", "memory", "cpu", "temperature", "custom/gpu", "clock"],
 	"clock": {
 		"format": "{:%a, %b %d %I:%M%p}"
 	},
 	"bluetooth": {
+		"format": "",
 		"format-connected-battery": "{device_alias} {device_battery_percentage}%"
 	},
 	"cpu": {
@@ -35,5 +37,20 @@
 	},
 	"systemd-failed-units": {
 		"format": "✗ {nr_failed}"
+	},
+	"wlr/workspaces": {
+		"format": "{name}",
+		"on-click": "activate",
+		"all-outputs": false,
+		"disable-scroll": false,
+		"format-icons": {
+			"default": ""
+		}
+	},
+	"custom/ping": {
+		"exec": "/home/emily/zig-waybar-contrib/zig-out/bin/ping",
+		"return-type": "json",
+		"interval": 0,
+		"signal": 13
 	}
 }

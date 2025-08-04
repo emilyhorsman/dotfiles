@@ -16,7 +16,8 @@ window#waybar {
 #temperature,
 #custom-gpu,
 #memory,
-#network {
+#network,
+#custom-ping {
 	padding: 5px 12px;
 }
 
