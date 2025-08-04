@@ -500,3 +500,23 @@ binds {
 /-xwayland-satellite {
     path "/usr/bin/xwayland-satellite"
 }
+
+workspace "chat";
+window-rule {
+  match at-startup=true app-id="discord"
+  match at-startup=true app-id="Signal"
+  open-on-workspace "chat"
+}
+spawn-at-startup "discord"
+spawn-at-startup "signal-desktop"
+
+workspace "main";
+window-rule {
+  match at-startup=true app-id="ghostty"
+  match at-startup=true app-id="librewolf"
+  open-on-workspace "main"
+}
+spawn-at-startup "ghostty"
+spawn-at-startup "librewolf"
+
+
