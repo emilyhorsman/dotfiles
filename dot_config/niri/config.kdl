@@ -461,6 +461,9 @@ binds {
 
     // Window selection with fuzzel
     Mod+E { spawn "sh" "/home/emily/.local/share/chezmoi/arch_scripts/niri-window-select.sh"; }
+    
+    // Emoji picker with bemoji (copies to clipboard)
+    Mod+Alt+E { spawn "sh" "-c" "BEMOJI_PICKER_CMD=\"fuzzel -d\" bemoji -t"; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
