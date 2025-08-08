@@ -460,7 +460,7 @@ binds {
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Window selection with fuzzel
-    Mod+E { spawn "sh" "/home/emily/.local/share/chezmoi/arch_scripts/niri-window-select.sh"; }
+    Mod+E { spawn "/home/emily/src/zig-niri-windows-fuzzel/trigger_window_picker"; }
     
     // Emoji picker with bemoji (copies to clipboard)
     Mod+Alt+E { spawn "sh" "-c" "BEMOJI_PICKER_CMD=\"fuzzel -d\" bemoji -t"; }
@@ -531,10 +531,8 @@ spawn-at-startup "signal-desktop"
 workspace "main";
 window-rule {
   match at-startup=true app-id="ghostty"
-  match at-startup=true app-id="librewolf"
   open-on-workspace "main"
 }
 spawn-at-startup "ghostty"
-spawn-at-startup "librewolf"
 
 
