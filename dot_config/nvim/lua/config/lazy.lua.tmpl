@@ -90,7 +90,7 @@ require("lazy").setup({
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "markdown", "markdown_inline" },
+        ensure_installed = { "markdown", "markdown_inline", "norg" },
         highlight = {
           enable = true,
         },
@@ -146,6 +146,31 @@ require("lazy").setup({
           enabled = true,
           position = "bottom",
           section_header = "## Completed",
+        },
+      })
+    end,
+  },
+  {
+    "nvim-neorg/neorg",
+    ft = "norg",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("neorg").setup({
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+{{- if eq .chezmoi.hostname "Emilys-MBP" }}
+                notes = "/Volumes/home/Documents/notes",
+{{- else }}
+                notes = "~/Documents/notes",
+{{- end }}
+              },
+              default_workspace = "notes",
+            },
+          },
         },
       })
     end,
