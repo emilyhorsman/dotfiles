@@ -460,7 +460,7 @@ binds {
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Window selection with fuzzel
-    Mod+E { spawn "/home/emily/src/zig-niri-windows-fuzzel/trigger_window_picker"; }
+    Mod+E { spawn "/home/emily/src/niri-fuzzy-focus/zig-out/bin/niri_fuzzy_focus"; }
     
     // Emoji picker with bemoji (copies to clipboard)
     Mod+Alt+E { spawn "sh" "-c" "BEMOJI_PICKER_CMD=\"fuzzel -d\" bemoji -t"; }
