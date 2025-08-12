@@ -8,3 +8,10 @@ arch_scripts
 .config/waybar/
 .config/niri/
 {{- end }}
+
+{{- if eq .chezmoi.hostname "work" }}
+.ssh/config
+.gitconfig
+.config/qutebrowser
+.config/1Password
+{{- end }}
