@@ -2,7 +2,15 @@
 	"layer": "top",
 	"modules-left": ["bluetooth", "systemd-failed-units"],
 	"modules-center": ["wlr/workspaces"],
-	"modules-right": ["custom/ping", "network", "memory", "cpu", "temperature", "custom/gpu", "clock"],
+	"modules-right": ["wireplumber", "network", "memory", "cpu", "temperature", "custom/gpu", "clock"],
+	"wireplumber": {
+		"format": "{volume}% {icon}",
+		"format-muted": "",
+		"on-click": "helvum",
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+		"format-icons": ["", "", "", "", "", ""],
+		"reverse-mouse-scrolling": true,
+	},
 	"clock": {
 		"format": "{:%a, %b %d %I:%M%p}"
 	},
@@ -47,10 +55,4 @@
 			"default": ""
 		}
 	},
-	"custom/ping": {
-		"exec": "/home/emily/zig-waybar-contrib/zig-out/bin/ping",
-		"return-type": "json",
-		"interval": 0,
-		"signal": 13
-	}
 }

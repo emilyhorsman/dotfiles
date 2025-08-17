@@ -17,7 +17,7 @@ window#waybar {
 #custom-gpu,
 #memory,
 #network,
-#custom-ping {
+#wireplumber {
 	padding: 5px 12px;
 }
 
