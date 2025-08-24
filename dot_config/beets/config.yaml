@@ -1,0 +1,17 @@
+directory: ~/Music
+import:
+  move: yes
+plugins: lyrics lastgenre fetchart embedart albumtypes badfiles chroma fish fuzzy info mpdstats thumbnails web duplicates edit
+web:
+  host: 0.0.0.0
+ui:
+  color: yes
+lyrics:
+  sources: [lrclib, genius]
+fetchart:
+  sources: '*'
+duplicates:
+  delete: yes
+musicbrainz:
+  external_ids:
+    bandcamp: yes
