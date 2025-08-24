@@ -8,7 +8,8 @@ if status is-interactive
 end
 
 # Environment variables
-set -gx EDITOR nvim
+set -Ux EDITOR nvim
+set -Ux SYSTEMD_EDITOR nvim
 
 # Add ~/.local/bin to PATH
 fish_add_path ~/.local/bin
