@@ -343,7 +343,7 @@
                     direction: Horizontal,
                     panes: [
                         (
-                            size: "20",
+                            size: "21",
                             pane: Component("volume"),
                         ),
                         (
@@ -351,7 +351,7 @@
                             pane: Component("statuses"),
                         ),
                         (
-                            size: "10",
+                            size: "21",
                             pane: Pane(Property(
                                 content: [
                                     (
