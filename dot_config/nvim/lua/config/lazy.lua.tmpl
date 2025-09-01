@@ -27,17 +27,6 @@ require("lazy").setup({
     priority = 1000,
     config = function()
       local catppuccin = require("catppuccin")
-
-      -- Determine flavor based on TERM_BACKGROUND
-      local term_bg = vim.env.TERM_BACKGROUND
-      local flavor = "mocha" -- default
-
-      if term_bg == "light" then
-        flavor = "latte"
-      elseif term_bg == "dark" then
-        flavor = "mocha"
-      end
-
       catppuccin.setup({
         flavour = flavor,
         background = {
@@ -173,6 +162,57 @@ require("lazy").setup({
           },
         },
       })
+    end,
+  },
+  {
+    "milanglacier/minuet-ai.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("minuet").setup({
+        provider = "ollama",
+        providers = {
+          ollama = {
+            model = "gemma2:4b",
+            end_point = "http://localhost:11434/api/chat",
+            name = "Ollama",
+            stream = true,
+            optional = {
+              max_tokens = 256,
+              temperature = 0.7,
+            },
+          },
+        },
+        virtualtext = {
+          auto_trigger = false,
+        },
+        debounce = 500,
+        throttle = 1000,
+      })
+      
+      -- Direct keymaps using the escape sequences from Ghostty
+      vim.keymap.set("i", "<Esc>[25~", function()
+        require("minuet.virtualtext").action.accept()
+      end, { desc = "Accept AI completion (Super+Tab)" })
+      
+      vim.keymap.set("i", "<Esc>[26~", function()
+        require("minuet.virtualtext").action.next()
+      end, { desc = "Next AI completion (Super+])" })
+      
+      vim.keymap.set("i", "<Esc>[27~", function()
+        require("minuet.virtualtext").action.prev()
+      end, { desc = "Previous AI completion (Super+[)" })
+      
+      vim.keymap.set("i", "<Esc>[28~", function()
+        require("minuet.virtualtext").action.dismiss()
+      end, { desc = "Dismiss AI completion (Super+e)" })
+      
+      vim.keymap.set("i", "<Esc>[29~", function()
+        require("minuet.virtualtext").action.accept_line()
+      end, { desc = "Accept line AI completion (Super+l)" })
+      
+      vim.keymap.set("i", "<Esc>[30~", function()
+        require("minuet").complete()
+      end, { desc = "Trigger AI completion (Super+y)" })
     end,
   }
 })
