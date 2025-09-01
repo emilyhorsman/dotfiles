@@ -14,13 +14,17 @@ window#waybar {
 #bluetooth,
 #cpu,
 #temperature,
-#custom-gpu,
 #memory,
 #network,
-#wireplumber {
+#wireplumber,
+#custom-memory,
+#custom-gpu,
+#custom-upates,
+#mpd {
 	padding: 5px 12px;
 }
 
 #temperature {
-	padding-left: 0px;
+	padding-left: 0;
 }
+#cpu { padding-right: 0; }

@@ -1,12 +1,11 @@
 {
 	"layer": "top",
-	"modules-left": ["bluetooth", "systemd-failed-units"],
-	"modules-center": ["wlr/workspaces"],
-	"modules-right": ["wireplumber", "network", "memory", "cpu", "temperature", "custom/gpu", "clock"],
+	"modules-left": ["custom/updates#zwc", "bluetooth"],
+	"modules-center": ["wireplumber", "mpd"],
+	"modules-right": ["network", "custom/memory#zwc", "cpu", "temperature", "custom/gpu#zwc", "clock"],
 	"wireplumber": {
-		"format": "{volume}% {icon}",
+		"format": "{icon} {volume}% on {node_name}",
 		"format-muted": "",
-		"on-click": "helvum",
 		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
 		"format-icons": ["", "", "", "", "", ""],
 		"reverse-mouse-scrolling": true,
@@ -20,18 +19,11 @@
 	},
 	"cpu": {
 		"interval": 2,
-		"format": "{load} {usage}%"
+		"format": "CPU {load} · "
 	},
 	"temperature": {
-		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+		"hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input",
 		"format": "{temperatureC}°C"
-	},
-	"custom/gpu": {
-		"exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | awk -F', ' '{print $1\"% \"$2\"°C\"}'",
-		"format": "GPU {}",
-		"interval": 2,
-		"return-type": "text",
-		"on-click": "notify-send 'NVIDIA GPU Information' \"$(nvidia-smi --query-gpu=name,utilization.gpu,temperature.gpu,power.draw,memory.used,memory.total,driver_version --format=csv,noheader | awk -F', ' '{print \"GPU: \"$1\"\\nUsage: \"$2\"\\nTemp: \"$3\"°C\\nPower: \"$4\"W\\nVRAM: \"$5\"MB / \"$6\"MB\\nDriver: \"$7}')\""
 	},
 	"memory": {
 		"interval": 30,
@@ -43,16 +35,23 @@
 		"format-disconnected": "",
 		"tooltip-format-wifi": "{essid} {ipaddr}"
 	},
-	"systemd-failed-units": {
-		"format": "✗ {nr_failed}"
+	"custom/updates#zwc": {
+		"exec": "/home/emily/zig-waybar-contrib/zig-out/bin/updates",
+		"return-type": "json",
+		"interval": 0,
+		"signal": 10,
+		"escape": true
 	},
-	"wlr/workspaces": {
-		"format": "{name}",
-		"on-click": "activate",
-		"all-outputs": false,
-		"disable-scroll": false,
-		"format-icons": {
-			"default": ""
-		}
+	"custom/gpu#zwc": {
+		"exec": "/home/emily/zig-waybar-contrib/zig-out/bin/gpu",
+		"return-type": "json",
+		"interval": 0,
+		"signal": 11
+	},
+	"custom/memory#zwc": {
+		"exec": "/home/emily/zig-waybar-contrib/zig-out/bin/memory",
+		"return-type": "json",
+		"interval": 0,
+		"signal": 12
 	},
 }
