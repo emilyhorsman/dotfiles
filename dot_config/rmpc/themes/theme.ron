@@ -220,7 +220,7 @@
                             modifiers: "Bold",
                         ),
                         oneshot_style: (
-                            fg: "#6c6f85",
+                            fg: "#8839ef",
                             modifiers: "Bold",
                         ),
                     ))),
