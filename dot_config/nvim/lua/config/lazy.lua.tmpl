@@ -63,18 +63,6 @@ require("lazy").setup({
     end,
   },
   {
-    "sindrets/diffview.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("diffview").setup({
-        diff_binaries = false,
-        enhanced_diff_hl = false,
-        git_cmd = { "git" },
-        use_icons = true,
-      })
-    end,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
@@ -94,29 +82,6 @@ require("lazy").setup({
       require('render-markdown').setup()
     end,
   },
-  {
-    "f-person/auto-dark-mode.nvim",
-    opts = {
-      update_interval = 3000,
-      set_dark_mode = function()
-        require("catppuccin").setup({ flavour = "mocha" })
-        vim.cmd.colorscheme("catppuccin")
-      end,
-      set_light_mode = function()
-        require("catppuccin").setup({ flavour = "latte" })
-        vim.cmd.colorscheme("catppuccin")
-      end,
-    },
-  },
-  -- {
-  --   "mcauley-penney/tidy.nvim",
-  --   event = { "BufWritePre" },
-  --   config = function()
-  --     require("tidy").setup({
-  --       filetype_exclude = { "markdown", "diff" }
-  --     })
-  --   end,
-  -- },
   {
     "mrjones2014/smart-splits.nvim",
     config = function()
@@ -152,7 +117,7 @@ require("lazy").setup({
             config = {
               workspaces = {
 {{- if eq .chezmoi.hostname "Emilys-MBP" }}
-                notes = "/Volumes/home/Documents/notes",
+                notes = "~/notes",
 {{- else }}
                 notes = "~/Documents/notes",
 {{- end }}
@@ -162,57 +127,6 @@ require("lazy").setup({
           },
         },
       })
-    end,
-  },
-  {
-    "milanglacier/minuet-ai.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("minuet").setup({
-        provider = "ollama",
-        providers = {
-          ollama = {
-            model = "gemma2:4b",
-            end_point = "http://localhost:11434/api/chat",
-            name = "Ollama",
-            stream = true,
-            optional = {
-              max_tokens = 256,
-              temperature = 0.7,
-            },
-          },
-        },
-        virtualtext = {
-          auto_trigger = false,
-        },
-        debounce = 500,
-        throttle = 1000,
-      })
-      
-      -- Direct keymaps using the escape sequences from Ghostty
-      vim.keymap.set("i", "<Esc>[25~", function()
-        require("minuet.virtualtext").action.accept()
-      end, { desc = "Accept AI completion (Super+Tab)" })
-      
-      vim.keymap.set("i", "<Esc>[26~", function()
-        require("minuet.virtualtext").action.next()
-      end, { desc = "Next AI completion (Super+])" })
-      
-      vim.keymap.set("i", "<Esc>[27~", function()
-        require("minuet.virtualtext").action.prev()
-      end, { desc = "Previous AI completion (Super+[)" })
-      
-      vim.keymap.set("i", "<Esc>[28~", function()
-        require("minuet.virtualtext").action.dismiss()
-      end, { desc = "Dismiss AI completion (Super+e)" })
-      
-      vim.keymap.set("i", "<Esc>[29~", function()
-        require("minuet.virtualtext").action.accept_line()
-      end, { desc = "Accept line AI completion (Super+l)" })
-      
-      vim.keymap.set("i", "<Esc>[30~", function()
-        require("minuet").complete()
-      end, { desc = "Trigger AI completion (Super+y)" })
     end,
   }
 })
